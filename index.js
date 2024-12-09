@@ -4,12 +4,15 @@ const textRegex = /^[a-zA-Z0-9\s.,!?'"()-]+$/;
 
 const firstNameInput = document.getElementById("first-name");
 const lastNameInput = document.getElementById("last-name");
-const topText = document.getElementById("top-text");
+const topTextInput = document.getElementById("top-text");
+const bottomTextInput = document.getElementById("bottom-text");
 
-firstNameInput.addEventListener("input", (e) => checkValidInput(nameRegex, e));
-lastNameInput.addEventListener("input", (e) => checkValidInput(nameRegex, e));
+firstNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e));
+lastNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e));
+topTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e));
+bottomTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e));
 
-function checkValidInput(regex, e){
+function checkValidInputWithRegex(regex, e){
     const value = e.target.value;
 
     if (regex.exec(value)){
