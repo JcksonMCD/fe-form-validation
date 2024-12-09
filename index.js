@@ -5,11 +5,17 @@ const firstNameInput = document.getElementById("first-name");
 firstNameInput.addEventListener("input", (e) => {
     const value = e.target.value;
 
+    console.log("conditional reached")
     if (nameRegex.exec(value)){
-        e.target.classList.add("valid");
-        e.target.classList.remove("invalid");     
-    } else {
+        console.log("matches");
+        
         e.target.classList.add("valid");
         e.target.classList.remove("invalid"); 
+        firstNameInput.style.borderColor = 'green';    
+    } else {
+        console.log("doesnt")
+        e.target.classList.add("valid");
+        e.target.classList.remove("invalid"); 
+        firstNameInput.style.borderColor = 'red';
     }
 })
