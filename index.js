@@ -7,11 +7,13 @@ const firstNameInput = document.getElementById("first-name");
 const lastNameInput = document.getElementById("last-name");
 const topTextInput = document.getElementById("top-text");
 const bottomTextInput = document.getElementById("bottom-text");
+const imageUrlInput = document.getElementById("image-url");
 
 firstNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e, "first-name-feedback"));
 lastNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e, "last-name-feedback"));
 topTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e, "top-text-feedback"));
 bottomTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e, "bottom-text-feedback"));
+imageUrlInput.addEventListener("input", (e) => checkValidInputWithRegex(urlRegex, e, "image-url-feedback"));
 
 function checkValidInputWithRegex(regex, e, feedbackId){
     const value = e.target.value;
