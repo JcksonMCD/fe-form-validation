@@ -18,22 +18,42 @@ bottomTextInput.addEventListener("blur", (e) => checkValidInputWithRegex(textReg
 imageUrlInput.addEventListener("blur", (e) => checkValidInputWithRegex(urlRegex, e, "image-url-feedback"));
 
 function checkValidInputWithRegex(regex, e, feedbackId){
-    const value = e.target.value;
+    const value = e.target.value.trim();
     const feedback = document.getElementById(feedbackId);
 
-    if (regex.exec(value)){
+    if (regex.test(value)){
         e.target.classList.add("valid");
         e.target.classList.remove("invalid"); 
         e.target.style.borderColor = 'green'; 
         feedback.textContent = "Looks good";  
+        return true;
     } else {
         e.target.classList.add("valid");
         e.target.classList.remove("invalid"); 
         e.target.style.borderColor = 'red';
         feedback.textContent = "Please use a valid input";
+        return false;
     } }
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); 
 
-    submitButton.addEventListener("click", (e) => {
+    const isFirstNameValid = checkValidInputWithRegex(nameRegex, 
+        { target: firstNameInput }, "first-name-feedback");
+    const isLastNameValid = checkValidInputWithRegex(nameRegex, 
+        { target: lastNameInput }, "last-name-feedback");
+    const isTopTextValid = checkValidInputWithRegex(textRegex, 
+        { target: topTextInput }, "top-text-feedback");
+    const isBottomTextValid = checkValidInputWithRegex(textRegex, 
+        { target: bottomTextInput }, "bottom-text-feedback");
+    const isImageUrlValid = checkValidInputWithRegex(urlRegex, 
+        { target: imageUrlInput }, "image-url-feedback");
 
-})
+    if (isFirstNameValid && isLastNameValid && isTopTextValid && 
+        isBottomTextValid && isImageUrlValid) {
+        console.log("Form is valid! Submitting...");
+        form.submit();
+    } else {
+        console.log("Form has invalid inputs. Please correct them.");
+    }
+});
