@@ -51,3 +51,47 @@ input {
     border-radius: 4px;
     font-size: 1rem;
 }
+
+button {
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #4500b3;
+}
+
+.feedback {
+    font-size: 0.9rem;
+    color: red;
+    display: none;
+}
+
+button {
+    background-color: #6200ea;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #4500b3;
+}
+
+.feedback {
+    font-size: 0.9rem;
+    color: red;
+    display: none; /* Will be toggled dynamically */
+}
