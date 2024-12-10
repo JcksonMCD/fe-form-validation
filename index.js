@@ -25,13 +25,15 @@ function checkValidInputWithRegex(regex, e, feedbackId){
         e.target.classList.add("valid");
         e.target.classList.remove("invalid"); 
         e.target.style.borderColor = 'green'; 
-        feedback.textContent = "Looks good";  
+        feedback.textContent = "Looks good";
+        feedback.style.color = 'green';  
         return true;
     } else {
         e.target.classList.add("valid");
         e.target.classList.remove("invalid"); 
         e.target.style.borderColor = 'red';
         feedback.textContent = "Please use a valid input";
+        feedback.style.color = 'red';
         return false;
     } }
 
