@@ -92,8 +92,12 @@ button:hover {
 
 .feedback {
     font-size: 0.9rem;
-    color: red;
-    display: none;
+    color: transparent;
+    transition: color 0.3s ease;
+}
+
+.feedback.visible {
+    color: inherit;
 }
 
 footer {
