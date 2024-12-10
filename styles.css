@@ -93,5 +93,27 @@ button:hover {
 .feedback {
     font-size: 0.9rem;
     color: red;
-    display: none; /* Will be toggled dynamically */
+    display: none;
 }
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+main {
+    margin-bottom: 2rem;
+}
+
+form {
+    margin-top: 2rem;
+}
+
