@@ -8,12 +8,14 @@ const lastNameInput = document.getElementById("last-name");
 const topTextInput = document.getElementById("top-text");
 const bottomTextInput = document.getElementById("bottom-text");
 const imageUrlInput = document.getElementById("image-url");
+const submitButton = document.getElementById("submit-button");
+const form = document.querySelector("form");
 
 firstNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e, "first-name-feedback"));
 lastNameInput.addEventListener("input", (e) => checkValidInputWithRegex(nameRegex, e, "last-name-feedback"));
-topTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e, "top-text-feedback"));
-bottomTextInput.addEventListener("input", (e) => checkValidInputWithRegex(textRegex, e, "bottom-text-feedback"));
-imageUrlInput.addEventListener("input", (e) => checkValidInputWithRegex(urlRegex, e, "image-url-feedback"));
+topTextInput.addEventListener("blur", (e) => checkValidInputWithRegex(textRegex, e, "top-text-feedback"));
+bottomTextInput.addEventListener("blur", (e) => checkValidInputWithRegex(textRegex, e, "bottom-text-feedback"));
+imageUrlInput.addEventListener("blur", (e) => checkValidInputWithRegex(urlRegex, e, "image-url-feedback"));
 
 function checkValidInputWithRegex(regex, e, feedbackId){
     const value = e.target.value;
@@ -30,3 +32,8 @@ function checkValidInputWithRegex(regex, e, feedbackId){
         e.target.style.borderColor = 'red';
         feedback.textContent = "Please use a valid input";
     } }
+
+
+    submitButton.addEventListener("click", (e) => {
+
+})
