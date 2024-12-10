@@ -53,8 +53,16 @@ form.addEventListener("submit", (e) => {
 
     if (isFirstNameValid && isLastNameValid && isTopTextValid && 
         isBottomTextValid && isImageUrlValid) {
-        console.log("Form is valid! Submitting...");
-        form.submit();
+            const baseUrl = 'generate.html';
+            const params = new URLSearchParams({
+                firstName: firstNameInput.value,
+                lastName: lastNameInput.value,
+                topText: topTextInput.value,
+                bottomText: bottomTextInput.value,
+                imageUrl: imageUrlInput.value
+            });
+    
+            window.location.href = `${baseUrl}?${params.toString()}`;
     } else {
         console.log("Form has invalid inputs. Please correct them.");
     }
